@@ -8,10 +8,11 @@ import com.example.pamfirebase.MahasiswaApplications
 
 object PenyediaViewModel {
     val Factory = viewModelFactory {
-        initializer { HomeViewModel(aplikasiKontak().container.kontakRepository) }
+        initializer { HomeViewModel(aplikasiKontak().container.mahasiswaRepository) }
     }
 
 }
+
 
 
 fun CreationExtras.aplikasiKontak(): MahasiswaApplications =
