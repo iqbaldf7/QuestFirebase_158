@@ -1,5 +1,6 @@
 package com.example.pamfirebase.ui.theme.viewmodel
 
+
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -11,21 +12,21 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 
-sealed class HomeUiState{
-    data class Success(val mhs: List<Mahasiswa>): HomeUiState()
-    data class Error(val exception: Throwable): HomeUiState()
-    object Loading: HomeUiState()
-
+sealed class HomeUiState {
+    data class Success(val mahasiswa: List<Mahasiswa>) : HomeUiState()
+    data class Error(val exeption: Throwable) : HomeUiState()
+    object Loading : HomeUiState()
 }
+
 class HomeViewModel (
-    private val mhs:  MahasiswaRepository
-): ViewModel(){
+    private val mhs: MahasiswaRepository
+):ViewModel(){
     var mhsUiState: HomeUiState by mutableStateOf(HomeUiState.Loading)
         private set
     init {
         getMhs()
-
     }
+
     fun getMhs(){
         viewModelScope.launch {
             mhs.getAllMahasiswa()
