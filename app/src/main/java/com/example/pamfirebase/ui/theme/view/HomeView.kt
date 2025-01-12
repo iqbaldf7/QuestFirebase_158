@@ -1,5 +1,4 @@
 package com.example.pamfirebase.ui.theme.view
-
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -43,10 +42,9 @@ import com.example.pamfirebase.ui.theme.viewmodel.HomeUiState
 import com.example.pamfirebase.ui.theme.viewmodel.HomeViewModel
 import com.example.pamfirebase.ui.theme.viewmodel.PenyediaViewModel
 
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen(
+fun HomeView(
     navigateToItemEntry:()->Unit,
     modifier: Modifier =Modifier,
     onDetailClick: (String) -> Unit ={},
